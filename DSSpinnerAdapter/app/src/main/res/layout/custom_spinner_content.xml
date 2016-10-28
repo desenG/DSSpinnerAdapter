@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/row_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="10">
+
+            <!--<TextView-->
+                <!--android:id="@+id/limit_name"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="3.1"-->
+                <!--android:ellipsize="end"-->
+                <!--android:maxLines="1"-->
+                <!--android:text="james"-->
+                <!--android:layout_marginEnd="5dp"-->
+                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                <!--android:textColor="#000000"-->
+                <!--android:layout_marginRight="5dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/temp_limit"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="2.3"-->
+                <!--android:fontFamily="sans-serif-medium"-->
+                <!--android:maxLines="1"-->
+                <!--android:text="james"-->
+                <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="13sp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/maturity_limit"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="2.3"-->
+                <!--android:fontFamily="sans-serif-medium"-->
+                <!--android:maxLines="1"-->
+                <!--android:visibility="gone"-->
+                <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="13sp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/strength_limit"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="2.3"-->
+                <!--android:fontFamily="sans-serif-medium"-->
+                <!--android:maxLines="1"-->
+                <!--android:text="james"-->
+                <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textSize="13sp" />-->
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/row_content"
+            android:background="#295029" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/none_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFFFF"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="6">
+
+        <!--<TextView-->
+            <!--android:id="@+id/clear_limit"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="3"-->
+            <!--android:background="?android:selectableItemBackground"-->
+            <!--android:fontFamily="sans-serif-medium"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="clear"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+        <!--<View-->
+            <!--android:id="@+id/border1"-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#295029" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/new_limit"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="3"-->
+            <!--android:background="?android:selectableItemBackground"-->
+            <!--android:fontFamily="sans-serif-medium"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="new"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium" />-->
+    </LinearLayout>
+
+</LinearLayout>
