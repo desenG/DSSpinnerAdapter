@@ -25,10 +25,14 @@ public class MainActivity extends AppCompatActivity {
         ParameterThreshold data1Item = new ParameterThreshold();
         data1Item.setName("xxx");
         data1Item.setUuid("nothinghere");
+        data1Item.setTempLimitLower(25.0);
+        data1Item.setStrengthLimit(25.0);
 
         ParameterThreshold data2Item = new ParameterThreshold();
         data2Item.setName("yyy");
         data2Item.setUuid("nothinghere");
+        data1Item.setTempLimitLower(26.0);
+        data1Item.setStrengthLimit(30.0);
 
         thresholds.add(data1Item);
         thresholds.add(data2Item);

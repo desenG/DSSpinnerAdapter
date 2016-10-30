@@ -1,10 +1,12 @@
 package com.example.desen.dsspinneradapter;
 
+import android.text.Html;
+
 /**
  * Created by desen on 2016-10-27.
  */
 
-public class ParameterThreshold {
+public class ParameterThreshold implements DSSpinnerAdapter.hasFields {
     private String uuid;
     private String name;
 
@@ -65,5 +67,17 @@ public class ParameterThreshold {
     public String toString()
     {
         return name;
+    }
+
+    @Override
+    public CharSequence[] getFields() {
+        return new CharSequence[]{
+                Html.fromHtml(String.format("<font color='#2196F3'>%.0f</font> - <font color='#F44336'>%.0f</font>%s",
+                        getTempLimitLower(),
+                        getTempLimitUpper(),
+                        "°C")),
+                String.format("%.0f%s", getStrengthLimit(),
+                        "MPa")
+        };
     }
 }

@@ -28,6 +28,13 @@ public class DSSpinnerAdapter<T> extends ArrayAdapter<T> {
     private String title;
     private List<DSButton>buttons;
 
+    private boolean hasFiles;
+
+    public interface hasFields
+    {
+        public CharSequence[] getFields();
+    }
+
     public DSSpinnerAdapter(Context context, int resourceId,
                                  List<T> objects) {
         super(context, resourceId, objects);
@@ -123,13 +130,41 @@ public class DSSpinnerAdapter<T> extends ArrayAdapter<T> {
             {
                 lable.setText(title);
                 lable.setTextColor(ColorManager.getBlackSecondary(context));
+                tempViewHolder.rowContent.removeAllViews();
+                tempViewHolder.rowContent.addView(lable);
             }
             else
             {
                 lable.setText(objects.get(position).toString());
+
+                T object = objects.get(position);
+
+                if(object instanceof hasFields)
+                {
+                    CharSequence [] fields = ((hasFields)objects.get(position)).getFields();
+                    if(fields != null && fields.length > 0)
+                    {
+                        int width = parent.getWidth()/(fields.length + 1);
+                        lable.setWidth(width);
+                        tempViewHolder.rowContent.removeAllViews();
+                        tempViewHolder.rowContent.addView(lable);
+                        for(CharSequence field : fields)
+                        {
+                            TextView fieldlable = new TextView(context);
+                            fieldlable.setText(field);
+                            fieldlable.setTextColor(ColorManager.getBlackSecondary(context));
+                            fieldlable.setWidth(width);
+                            tempViewHolder.rowContent.addView(fieldlable);
+                        }
+                    }
+                    else
+                    {
+                        tempViewHolder.rowContent.removeAllViews();
+                        tempViewHolder.rowContent.addView(lable);
+                    }
+                }
             }
-            tempViewHolder.rowContent.removeAllViews();
-            tempViewHolder.rowContent.addView(lable);
+
         }
 
         return convertView;
@@ -156,13 +191,40 @@ public class DSSpinnerAdapter<T> extends ArrayAdapter<T> {
         {
             lable.setText(title);
             lable.setTextColor(ColorManager.getBlackSecondary(context));
+            tempViewHolder.rowContent.removeAllViews();
+            tempViewHolder.rowContent.addView(lable);
         }
         else
         {
             lable.setText(objects.get(position).toString());
+
+            T object = objects.get(position);
+
+            if(object instanceof hasFields)
+            {
+                CharSequence [] fields = ((hasFields)objects.get(position)).getFields();
+                if(fields != null && fields.length > 0)
+                {
+                    int width = parent.getWidth()/(fields.length + 1);
+                    lable.setWidth(width);
+                    tempViewHolder.rowContent.removeAllViews();
+                    tempViewHolder.rowContent.addView(lable);
+                    for(CharSequence field : fields)
+                    {
+                        TextView fieldlable = new TextView(context);
+                        fieldlable.setText(field);
+                        fieldlable.setTextColor(ColorManager.getBlackSecondary(context));
+                        fieldlable.setWidth(width);
+                        tempViewHolder.rowContent.addView(fieldlable);
+                    }
+                }
+                else
+                {
+                    tempViewHolder.rowContent.removeAllViews();
+                    tempViewHolder.rowContent.addView(lable);
+                }
+            }
         }
-        tempViewHolder.rowContent.removeAllViews();
-        tempViewHolder.rowContent.addView(lable);
 
         return convertView;
     }
